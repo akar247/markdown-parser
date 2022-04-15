@@ -44,8 +44,14 @@ public class MarkdownParse {
                     }
                 }
             }
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
-            currentIndex = closeParen + 1;
+            if(openBracket != 0 && markdown.charAt(openBracket-1) == '!'){
+                toReturn.add("Image Reference Error");
+                currentIndex = closeParen + 1;
+            }
+            else{
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+                currentIndex = closeParen + 1;
+            }
         }
         return toReturn;
     }
