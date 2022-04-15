@@ -45,7 +45,6 @@ public class MarkdownParse {
                 }
             }
             if(openBracket != 0 && markdown.charAt(openBracket-1) == '!'){
-                toReturn.add("Image Reference Error");
                 currentIndex = closeParen + 1;
             }
             else{
