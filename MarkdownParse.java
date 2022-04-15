@@ -27,7 +27,21 @@ public class MarkdownParse {
             }
             else{
                 while(markdown.indexOf(")", closeParen+1) != -1){
+
                     closeParen = markdown.indexOf(")", closeParen+1);
+                }
+            }
+            if(openParen == -1 || closeParen == -1){
+                if(openParen == -1){
+                    openParen = closeBracket;
+                }
+                if(closeParen == -1){
+                    if(nextOpen == -1){
+                        closeParen = markdown.length();
+                    }
+                    else{
+                        closeParen = nextOpen - 1;
+                    }
                 }
             }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
