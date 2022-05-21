@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\itsam\\Spring2022\\CSE 12\\JUNIT\\hamcrest-core-1.3.jar",
+            "c:\\Users\\itsam\\Spring2022\\CSE 12\\JUNIT\\junit-4.13.2.jar"
+        ],
+        "exclude": [
+            "lib/hamcrest-core-1.3.jar",
+            "lib/junit-4.13.2.jar"
+        ]
+    }
+}
