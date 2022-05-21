@@ -25,7 +25,7 @@ public class MarkdownParse {
         continue;
       }
       if (exclam == -1 || exclam != openBracket - 1) {
-        toReturn.add(markdown.substring(openParen + 1, closeParen));
+        toReturn.add(markdown.substring(openParen + 1, closeParen).replaceAll("\\s", ""));
       }
       currentIndex = closeParen + 1;
     }

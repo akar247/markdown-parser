@@ -1,5 +1,5 @@
 import static org.junit.Assert.*;
-import org.junit.Test;
+import org.junit.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,7 +20,6 @@ public class MDParserTester2 {
             actual = MarkdownParse.getLinks(Files.readString(Path.of("Snip1.md")));
         }
         catch(IOException io){
-            System.out.println("OVER HERE!!");
             System.out.println(io.getMessage());
         }
 
@@ -29,8 +28,8 @@ public class MDParserTester2 {
 
     @Test
     public void testSnip2(){
-        ArrayList<String> expected = new ArrayList<>(List.of("b.com", 
-        "a.com", "example.com"));
+        ArrayList<String> expected = new ArrayList<>(List.of("a.com", 
+        "a.com(())", "example.com"));
 
         ArrayList<String> actual = null;
 
